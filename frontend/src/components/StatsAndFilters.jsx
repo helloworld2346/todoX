@@ -33,7 +33,7 @@ const StatsAndFilters = ({
         {Object.keys(FilterType).map((type) => (
           <Button
             key={type}
-            variant={filter === type ? "gradient" : "ghost"}
+            variant={filter === type ? "active" : "ghost"}
             size="sm"
             className="capitalize"
             onClick={() => setFilter(type)}
