@@ -15,13 +15,13 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 
-if (process.env.NODE_ENV !== "prod") {
+if (process.env.NODE_ENV !== "production") {
   app.use(cors({ origin: "http://localhost:5173" }));
 }
 
 app.use("/api/tasks", taskRoutes);
 
-if (process.env.NODE_ENV === "dev") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   app.get("*", (req, res) => {
